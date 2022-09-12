@@ -20,7 +20,7 @@ spec:
             - containerPort: 8080
           env:
             - name: DB_URL
-              value: Mysqldb-service
+              value: mysqldb-service
             - name: DB_NAME
               value: mysql
             - name: DB_USERNAME
