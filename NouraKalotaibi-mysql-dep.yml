@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Mysqldb
+  name: mysqldb
   namespace: nourakalotaibi-tawazun
   labels:
     app: Mysqldb
@@ -14,7 +14,7 @@ spec:
         app: Mysqldb
     spec:
       containers:
-        - name: Mysqldb
+        - name: mysqldb
           image: mysql
           ports:
             - containerPort: 3306

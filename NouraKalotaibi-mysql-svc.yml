@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Mysqldb-service
+  name: mysqldb-service
   namespace: nourakalotaibi-tawazun
   labels:
     app: Mysqldb
@@ -9,7 +9,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - name: Mysql-svc-port
+    - name: mysql-svc-port
       port: 3306
       targetPort: 3306
   selector:
