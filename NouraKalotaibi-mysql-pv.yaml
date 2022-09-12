@@ -1,17 +1,16 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: tawazun-app-pv
   namespace: nourakalotaibi-tawazun
+  name: aws-pv
   labels:
-    type: local
-    apps: Mysqldb-volume
     name: NouraKAlotaibi
+    type: aws-pv
 spec:
   capacity:
-    storage: 4Gi
+    storage: 3Gi
   accessModes:
     - ReadWriteOnce
-  hostPath:
-    path: "/mnt/data1"
-  storageClassName: local-path
+  awsElasticBlockStore:
+    volumeID: vol-07676b003556f2ae1
+    fsType: xfs

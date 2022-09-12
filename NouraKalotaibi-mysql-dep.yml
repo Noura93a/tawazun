@@ -33,7 +33,7 @@ spec:
       volumes:  
         - name: tawazun-app-volume
           persistentVolumeClaim:
-            claimName: tawazun-app-pvc
+            claimName: aws-pvc
   replicas: 1
   selector:
     matchLabels:
