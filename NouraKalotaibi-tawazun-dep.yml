@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tawazun-deployment
+  namespace: nourakalotaibi-tawazun
+  labels:
+    app: tawazun
+    name: NouraK Alotaibi
+spec:
+  template:
+    metadata:
+      name: tawazun
+      labels:
+        app: tawazun
+    spec:
+      containers:
+        - name: tawazun-container
+          image: noura93/tawazun:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_URL
+              value: Mysqldb-service
+            - name: DB_NAME
+              value: mysql
+            - name: DB_USERNAME
+              value: mysql
+            - name: DB_PASSWORD
+              value: mysql
+            - name: DB_PORT
+              value: 3306
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tawazun

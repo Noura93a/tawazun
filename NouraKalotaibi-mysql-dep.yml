@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Mysqldb
+  namespace: nourakalotaibi-tawazun
+  labels:
+    app: Mysqldb
+    name: NouraK Alotaibi
+spec:
+  template:
+    metadata:
+      name: Mysqldb
+      labels:
+        app: Mysqldb
+    spec:
+      containers:
+        - name: Mysqldb
+          image: mysql
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_USER
+              value: "mysql"
+            - name: MYSQL_DATABASE
+              value: "mysql"
+            - name: MYSQL_PASSWORD
+              value: "mysql"
+            - name: MYSQL-ROOT-PASSWORD
+              value: "mysql"          
+          volumeMounts:
+            - mountPath: /dbvolume/data
+              name: tawazun-app-volume
+      volumes:  
+        - name: tawazun-app-volume
+          persistentVolumeClaim:
+            claimName: tawazun-app-pvc
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Mysqldb
+
+      
