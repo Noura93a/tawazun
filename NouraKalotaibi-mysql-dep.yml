@@ -26,14 +26,23 @@ spec:
             - name: MYSQL_PASSWORD
               value: "mysql"
             - name: MYSQL-ROOT-PASSWORD
-              value: "mysql"          
+              value: "mysql"  
+          livenessProbe: 
+            tcpSocket:
+              port: 3306
+            initialDelaySeconds: 2  
+            periodSeconds: 2 
+            timeoutSeconds: 1 
+            successThreshold: 1 
+            failureThreshold: 3         
           volumeMounts:
             - mountPath: /dbvolume/data
               name: tawazun-app-volume
       volumes:  
         - name: tawazun-app-volume
           persistentVolumeClaim:
-            claimName: aws-pvc
+            claimName: tawazun-app-pvc
+
   replicas: 1
   selector:
     matchLabels:

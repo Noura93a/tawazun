@@ -1,17 +1,15 @@
-kind: PersistentVolumeClaim
 apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
+  name: tawazun-app-pvc
   namespace: nourakalotaibi-tawazun
-  name: aws-pvc
-  labels:
+  labels: 
+    apps: Mysqldb-vclaim
     name: NouraKAlotaibi
-    type: aws-pvc
 spec:
   accessModes:
     - ReadWriteOnce
-resources:
-  requests:
-    storage: 3Gi
-  selector:
-    matchLabels:
-      type: aws-pv
+  resources:
+    requests:
+      storage: 3Gi
+  storageClassName: local-path
