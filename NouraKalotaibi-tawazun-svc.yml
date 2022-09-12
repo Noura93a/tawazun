@@ -5,7 +5,7 @@ metadata:
   namespace: nourakalotaibi-tawazun
   labels:
     app: tawazun-svc
-    name: NouraK Alotaibi
+    name: NouraKAlotaibi
 spec:
   type: NodePort
   ports:

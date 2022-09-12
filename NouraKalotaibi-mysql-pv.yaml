@@ -6,7 +6,7 @@ metadata:
   labels:
     type: local
     apps: Mysqldb-volume
-    name: NouraK Alotaibi
+    name: NouraKAlotaibi
 spec:
   capacity:
     storage: 3Gi

@@ -5,7 +5,7 @@ metadata:
   namespace: nourakalotaibi-tawazun
   labels:
     app: Mysqldb
-    name: NouraK Alotaibi
+    name: NouraKAlotaibi
 spec:
   template:
     metadata:

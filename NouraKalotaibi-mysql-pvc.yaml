@@ -5,7 +5,7 @@ metadata:
   namespace: nourakalotaibi-tawazun
   labels: 
     apps: Mysqldb-vclaim
-    name: NouraK Alotaibi
+    name: NouraKAlotaibi
 spec:
   accessModes:
     - ReadWriteOnce
