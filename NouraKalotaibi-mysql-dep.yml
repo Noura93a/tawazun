@@ -9,7 +9,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: Mysqldb
+      name: Mysqldb-pod
       labels:
         app: Mysqldb
     spec:

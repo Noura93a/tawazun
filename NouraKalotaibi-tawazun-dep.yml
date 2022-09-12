@@ -9,7 +9,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: tawazun
+      name: tawazun-pod
       labels:
         app: tawazun
     spec:

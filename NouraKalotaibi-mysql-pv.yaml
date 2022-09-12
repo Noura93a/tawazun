@@ -14,4 +14,4 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: "/mnt/data1"
-  storageClassName: local-path
+
