@@ -9,7 +9,7 @@ metadata:
     name: NouraKAlotaibi
 spec:
   capacity:
-    storage: 3Gi
+    storage: 4Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
