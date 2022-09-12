@@ -18,7 +18,7 @@ spec:
           image: noura93/tawazun1:latest
           resources: 
             requests: 
-              memory: "128Mi"
+              memory: "200Mi"
               cpu: "200m"
             limits:
               memory: "512Mi"
