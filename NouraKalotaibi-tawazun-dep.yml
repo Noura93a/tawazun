@@ -25,6 +25,16 @@ spec:
               cpu: "500m"
           ports:
             - containerPort: 8080
+          startupProbe:
+              initialDelaySeconds: 3
+              periodSeconds: 2
+              timeoutSeconds: 1
+              successThreshold: 1
+              failureThreshold: 2
+              exec:
+                command:
+                - touch
+                - hello.txt
           env:
             - name: DB_URL
               value: mysqldb
