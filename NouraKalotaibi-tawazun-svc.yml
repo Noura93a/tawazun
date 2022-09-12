@@ -12,7 +12,7 @@ spec:
     - name: tawazun-svc-port
       port: 8080
       targetPort: 8080
-      nodePort: 30020
+      nodePort: 31000
       protocol: TCP
   selector:
     app: tawazun
