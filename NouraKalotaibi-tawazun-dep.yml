@@ -36,12 +36,6 @@ spec:
               value: mysql
             - name: DB_PORT
               value: '3306'
-          livenessProbe:
-            httpGet:
-              path: /home
-              port: 8080
-            initialDelaySeconds: 3
-            periodSeconds: 3
 
   replicas: 1
   selector:
