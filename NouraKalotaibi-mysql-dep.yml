@@ -16,13 +16,6 @@ spec:
       containers:
         - name: mysqldb
           image: mysql:latest
-          resources: 
-            requests: 
-              memory: "265Mi"
-              cpu: "200m"
-            limits:
-              memory: "512Mi"
-              cpu: "600m"
           ports:
             - containerPort: 3306
           env:
