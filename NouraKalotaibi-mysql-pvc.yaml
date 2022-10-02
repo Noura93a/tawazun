@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tawazun-app-pvc
+  namespace: nourakalotaibi-tawazun
+  labels: 
+    app: Mysqldb
+    name: NouraKAlotaibi
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi

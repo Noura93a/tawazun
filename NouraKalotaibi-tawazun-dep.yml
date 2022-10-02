@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tawazun-deployment
+  namespace: nourakalotaibi-tawazun
+  labels:
+    app: tawazun
+    name: NouraKAlotaibi
+spec:
+  template:
+    metadata:
+      name: tawazun-pod
+      labels:
+        app: tawazun
+        service: app-lb-service
+    spec:
+      containers:
+        - name: tawazun-container
+          image: noura93/tawazunn
+          resources: 
+            requests: 
+              memory: 250Mi
+              cpu: "250m"
+            limits:
+              memory: 512Mi
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tawazun
+      service: app-lb-service

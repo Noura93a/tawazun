@@ -1,0 +1,17 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-lb-service
+  namespace: nourakalotaibi-tawazun
+  labels:
+    name: NouraKAlotaibi
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+    name: app-service
+  type: LoadBalancer
+  selector:
+    app: tawazun
+    service: app-lb-service
